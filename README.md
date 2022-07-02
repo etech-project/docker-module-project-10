@@ -78,3 +78,14 @@
   backing up the docker image to a container registry of your choice.
 
 - See the Jenkinsfile...
+
+- Create a Jenkins Pipeline
+- Inside the Pipeline,
+    Define the build tools, like maven
+    Create a registry environment to point to the container repository
+    - The structure of the pipeline consist of the following stages
+        - Stage 1: to clone the repository. The repo should contain some pom.xml file to build and inject dependencies
+        - Stage 2: to do a maven build
+        - Stage 3:  to build docker images
+        - Stage 4: to push to ECR (Elastic Container Registry)
+          Note: Before pushing the image to ECR, auithenticate with AWS by create a IAM Role and attaching an AmazonEC2ContainerFullAccess policy. To grant Read and Write Permission to the Jenkins server.
