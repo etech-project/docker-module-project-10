@@ -1,0 +1,18 @@
+@import './variables';
+
+.manual-caret {
+  position: absolute;
+  left: 0;
+  top: 1em;
+  background-color: transparent;
+  white-space: pre-wrap;
+  box-sizing: content-box;
+  display: none;
+  height: auto;
+  width: auto;
+  z-index: 1;
+}
+
+.hide-caret {
+  z-index: 2;
+}

@@ -1,0 +1,84 @@
+$scroll-mask-high-intensity: rgba(0, 0, 0, 0.333);
+$scroll-mask-low-intensity: rgba(0, 0, 0, 0.75);
+
+.scroll-mask-low-intensity-all {
+  -webkit-mask-image: linear-gradient(
+    0deg,
+    $scroll-mask-low-intensity,
+    rgba(0, 0, 0, 1),
+    $scroll-mask-low-intensity
+  );
+  mask-image: linear-gradient(
+    0deg,
+    $scroll-mask-low-intensity,
+    rgba(0, 0, 0, 1),
+    $scroll-mask-low-intensity
+  );
+}
+
+.scroll-mask-low-intensity-bottom {
+  -webkit-mask-image: linear-gradient(
+    0deg,
+    $scroll-mask-low-intensity,
+    rgba(0, 0, 0, 1)
+  );
+  mask-image: linear-gradient(
+    0deg,
+    $scroll-mask-low-intensity,
+    rgba(0, 0, 0, 1)
+  );
+}
+
+.scroll-mask-low-intensity-top {
+  -webkit-mask-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1),
+    $scroll-mask-low-intensity
+  );
+  mask-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1),
+    $scroll-mask-low-intensity
+  );
+}
+
+.scroll-mask-high-intensity-all {
+  -webkit-mask-image: linear-gradient(
+    0deg,
+    $scroll-mask-high-intensity,
+    rgba(0, 0, 0, 1),
+    $scroll-mask-high-intensity
+  );
+  mask-image: linear-gradient(
+    0deg,
+    $scroll-mask-high-intensity,
+    rgba(0, 0, 0, 1),
+    $scroll-mask-high-intensity
+  );
+}
+
+.scroll-mask-high-intensity-bottom {
+  -webkit-mask-image: linear-gradient(
+    0deg,
+    $scroll-mask-high-intensity,
+    rgba(0, 0, 0, 1)
+  );
+  mask-image: linear-gradient(
+    0deg,
+    $scroll-mask-high-intensity,
+    rgba(0, 0, 0, 1)
+  );
+}
+
+.scroll-mask-high-intensity-top {
+  -webkit-mask-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1),
+    $scroll-mask-high-intensity
+  );
+  mask-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1),
+    $scroll-mask-high-intensity
+  );
+}

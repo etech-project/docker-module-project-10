@@ -1,0 +1,186 @@
+@import 'variables';
+
+@mixin flex-col-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin abs-translate-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin icon-size($size: 24px) {
+  font-size: $size;
+  width: $size;
+  height: $size;
+  line-height: $size;
+}
+
+@mixin common-box-shadow() {
+  box-shadow: 0 0.1rem 1rem -0.1rem rgba(0, 0, 0, 0.3);
+}
+
+%dark-rectangle-element {
+  margin-top: 0.25rem;
+}
+
+%dark-rectangle-base {
+  font-family: 'aileron-light';
+  font-weight: normal;
+  font-size: 1.5rem;
+  border-radius: 0.25rem;
+  width: 100%;
+  background-color: $common-gray-darker;
+}
+
+%dark-rectangle-input {
+  outline: none;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  border: none;
+
+  &.prefixed {
+    padding-left: 2rem;
+    padding-right: 0.25rem;
+  }
+
+  &.hide-caret:not(.prefixed) {
+    padding-left: 0.75rem;
+    padding-right: 0.25rem;
+  }
+
+  &.ng-dirty + .prefix,
+  &:focus + .prefix {
+    opacity: 1;
+  }
+}
+
+%user-account-image {
+  background-color: white;
+  background-size: contain;
+  height: 23px;
+  width: 23px;
+  border-radius: 14px;
+  border: 2px solid;
+  display: inline-block;
+  margin-right: -10px;
+  z-index: 1;
+
+  &:first-child {
+    margin-left: 5px;
+    z-index: 0;
+  }
+}
+
+.dark-sheet-theme {
+  color: white;
+
+  h4 {
+    color: white;
+  }
+
+  .label {
+    font-size: 0.75rem;
+  }
+
+  .form-field:not(.form-field-has-error) {
+    margin-bottom: 2rem;
+
+    .prefix {
+      top: 52%;
+      color: #ffffff;
+    }
+
+    .dark-rectangle {
+      border: none;
+      color: #ffffff;
+      caret-color: #ffffff;
+
+      input.hide-caret {
+        caret-color: #ffffff;
+        color: #ffffff;
+      }
+
+      .prefix {
+        top: 55%;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .form-field-has-error {
+    .prefix {
+      top: 40%;
+      color: lightcoral;
+    }
+
+    .dark-rectangle {
+      border: 1px solid lightcoral;
+      caret-color: lightcoral;
+      color: lightcoral;
+
+      input.hide-caret {
+        caret-color: lightcoral;
+        color: lightcoral;
+      }
+
+      .prefix {
+        top: 42%;
+        color: lightcoral;
+      }
+    }
+
+    .label,
+    .form-field-error {
+      color: lightcoral;
+      font-size: 0.75rem;
+    }
+
+    .form-field-error {
+      margin: 0.25rem 0;
+    }
+
+    margin-bottom: 0;
+  }
+
+  .form-field {
+    position: relative;
+
+    .dark-rectangle {
+      @extend %dark-rectangle-base;
+      @extend %dark-rectangle-element;
+
+      input.hide-caret {
+        margin: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        @extend %dark-rectangle-base;
+        @extend %dark-rectangle-input;
+      }
+
+      .manual-caret {
+        margin-top: 0.8rem;
+      }
+    }
+
+    input.dark-rectangle {
+      padding: 0.5rem 0.25rem 0.5rem 0.75rem;
+      @extend %dark-rectangle-element;
+      @extend %dark-rectangle-base;
+      @extend %dark-rectangle-input;
+    }
+
+    .prefix {
+      position: absolute;
+      font-size: 1.5rem;
+      left: 1rem;
+      opacity: 0;
+      transition: opacity ease-in-out 0.3s;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.button-panel {
+  padding: 2rem 0;
+
+  .button-panel-primary-button {
+    font-size: 1.125rem;
+  }
+
+  button {
+    width: 100%;
+    height: 3em;
+  }
+
+  .button-panel-primary-button:disabled {
+    background-color: $common-gray-light !important;
+  }
+
+  .button-panel-secondary-button:disabled {
+    color: $common-gray-light !important;
+  }
+
+  .button-panel-button-spinner {
+    margin: 0 auto;
+  }
+
+  .button-panel-secondary-button {
+    background-color: transparent;
+    border: none;
+    margin-top: 1em;
+    font-size: 1rem;
+    color: $common-teal-light;
+    outline: none;
+  }
+}

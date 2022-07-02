@@ -1,0 +1,42 @@
+$text-toggle-border-radius: 0.25em;
+
+.text-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .text-toggle-option {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.5em;
+    outline: none;
+    border-color: $common-gray-dark;
+    border-style: solid;
+    border-top-width: 0.0625rem;
+    border-bottom-width: 0.0625rem;
+    margin: 0;
+  }
+
+  .text-toggle-option:not(.text-toggle-selected) {
+    background-color: #ffffff;
+    color: $common-gray-dark;
+  }
+
+  .text-toggle-selected {
+    background-color: $common-teal-light;
+    color: #ffffff;
+    transition: background-color 500ms;
+  }
+
+  .text-toggle-left {
+    border-radius: $text-toggle-border-radius 0 0 $text-toggle-border-radius;
+    border-left-width: 0.0625rem;
+    border-right-width: 0;
+  }
+
+  .text-toggle-right {
+    border-radius: 0 $text-toggle-border-radius $text-toggle-border-radius 0;
+    border-right-width: 0.0625rem;
+    border-left-width: 0;
+  }
+}
