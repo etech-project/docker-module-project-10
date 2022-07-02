@@ -1,17 +1,21 @@
 pipeline {
     tools {
-        maven 'Maven3'
+        maven 'maven'
     }
 
     agent any
     environment {
-        registry = "account_id/name_of_repo"
+        registry = "746063145878.dkr.ecr.us-east-2.amazonaws.com/docker-etech"
     }
 
     stages {
         stage ('Clone Repo') {
             steps {
-                // checkout code from GitHub here
+            checkout([$class: 'GitSCM', 
+            branches: [[name: '*/feature/eukoha']], 
+            extensions: [], 
+            userRemoteConfigs: [[credentialsId: '8d289e62-9a3c-47f9-b51f-418794f5a7db', 
+            url: 'https://github.com/etech-project/docker-module-project-10.git']]])
             }
         }
 
