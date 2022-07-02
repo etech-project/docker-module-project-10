@@ -5,7 +5,7 @@ pipeline {
 
     agent any
     environment {
-        registry = "746063145878.dkr.ecr.us-east-2.amazonaws.com/docker-etech"
+        registry = "658455600470.dkr.ecr.us-east-2.amazonaws.com/docker-devsecops-bros"
     }
 
     stages {
@@ -36,7 +36,7 @@ pipeline {
         stage ('Pushing to ECR') {
             steps {
                 script {
-                    sh 'aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 746063145878.dkr.ecr.us-east-2.amazonaws.com'
+                    sh 'aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 658455600470.dkr.ecr.us-east-2.amazonaws.com'
                 }
             }
         }
