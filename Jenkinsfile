@@ -44,7 +44,7 @@ pipeline {
         stage ("Docker Run") {
             steps {
                 script {
-                    dockerImage.run("-p 3000:5000 --rm --name docker-devsecops-bros")
+                    dockerImage.run("-p 8096:5000 --rm --name docker-devsecops-bros")
                 }
             }
         }
